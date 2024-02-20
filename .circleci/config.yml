@@ -22,8 +22,6 @@ workflows:
       - orb-tools/publish:
           orb_name: democircleci/multiplication_circleci
           vcs_type: << pipeline.project.type >>
-          pub_type: production
-          # Ensure this job requires all test jobs and the pack job.
           requires:
             - orb-tools/pack
           context: orb-publishing
