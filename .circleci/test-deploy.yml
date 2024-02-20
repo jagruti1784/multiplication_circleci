@@ -51,4 +51,4 @@ workflows:
             - orb-tools/pack
             - command-test
           context: orb-publishing
-          filters: *release-filters
+          filters: *filters
