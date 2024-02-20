@@ -3,7 +3,7 @@ orbs:
   # Your orb will be automatically injected here during the pipeline.
   # Reference your orb's jobs and commands below as they will exist when built.
   multiplication_circleci: democircleci/multiplication_circleci@dev:alpha
-  #orb-tools: circleci/orb-tools@12.0
+  orb-tools: circleci/orb-tools@12.0
   # The orb definition is intentionally not included here. It will be injected into the pipeline.
   # multiplication_circleci: {}
 
@@ -23,7 +23,7 @@ filters: &filters
 jobs:
   # Create jobs to test the commands of your orbs.
   # You may want to add additional validation steps to ensure the commands are working as expected.
-  multiplication:
+  command-test:
     docker:
       - image: cimg/base:current
     steps:
@@ -37,18 +37,18 @@ workflows:
     jobs:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
       # Test your orb's commands in a custom job and test your orb's jobs directly as a part of this workflow.
-      - multiplication:
-          #filters: *filters
+      - command-test:
+          filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
-      #- orb-tools/pack:
-          #filters: *filters
-      #- orb-tools/publish:
-          #orb_name: democircleci/multiplication_circleci
-          #vcs_type: << pipeline.project.type >>
+      - orb-tools/pack:
+          filters: *filters
+      - orb-tools/publish:
+          orb_name: democircleci/multiplication_circleci
+          vcs_type: << pipeline.project.type >>
           # pub_type: production
           # Ensure this job requires all test jobs and the pack job.
-          #requires:
-            #- orb-tools/pack
-            #- command-test
-          #context: orb-publishing
-          #filters: *filters
+          requires:
+            - orb-tools/pack
+            - command-test
+          context: orb-publishing
+          filters: *filters
