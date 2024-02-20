@@ -20,9 +20,13 @@ workflows:
       - shellcheck/check:
           filters: *filters
       - orb-tools/publish:
-          orb-name: democircleci/multiplication_circleci
+          orb_name: democircleci/multiplication_circleci
           vcs_type: << pipeline.project.type >>
-          requires: [orb-tools/lint, orb-tools/review, orb-tools/pack, shellcheck/check]
+          pub_type: production
+          # Ensure this job requires all test jobs and the pack job.
+          requires:
+            - orb-tools/pack
+            - command-test
           context: orb-publishing
           filters: *filters
       - orb-tools/continue:
