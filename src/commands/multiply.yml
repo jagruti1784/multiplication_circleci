@@ -1,18 +1,16 @@
 description: >
   Multiplication of two numbers
-# What will this command do?
-# Descriptions should be short, simple, and clear.
 parameters:
   numA:
-    type: integer 
-    description: "First number"
+    type: integer
+    description: First number
   numB:
-    type: integer 
-    description: "Second number"
+    type: integer
+    description: Second number
 steps:
   - run:
       environment:
         PARAM_NUMA: <<parameters.numA>>
         PARAM_NUMB: <<parameters.numB>>
-      name: "Multiplying <<parameters.numA>> * <<parameters.numB>>"
+      name: Multiplying <<parameters.numA>> * <<parameters.numB>>
       command: <<include(scripts/multiply.sh)>>
