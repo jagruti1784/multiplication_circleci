@@ -19,10 +19,16 @@ workflows:
           filters: *filters
       - shellcheck/check:
           filters: *filters
-      # Triggers the next workflow in the Orb Development Kit.
+      - orb-tools/publish:
+          orb-name: democircleci/multiplication_circleci
+          vcs_type: << pipeline.project.type >>
+          requires:
+            [orb-tools/lint, orb-tools/review, orb-tools/pack, shellcheck/check]
+          context: orb-publishing
+          filters: *filters
       - orb-tools/continue:
           pipeline_number: << pipeline.number >>
           vcs_type: << pipeline.project.type >>
-          orb_name: multiplication_circleci
+          orb_name: multiplyv2
           requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
           filters: *filters
