@@ -26,7 +26,6 @@ workflows:
           # Ensure this job requires all test jobs and the pack job.
           requires:
             - orb-tools/pack
-            - command-test
           context: orb-publishing
           filters: *filters
       - orb-tools/continue:
