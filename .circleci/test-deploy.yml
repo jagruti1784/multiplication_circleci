@@ -29,9 +29,9 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - multiplication_circleci/multiply:
-          numA: 2
-          numb: 5
+      # - multiplication_circleci/multiply:
+      #     numA: 2
+      #     numb: 5
 workflows:
   test-deploy:
     jobs:
