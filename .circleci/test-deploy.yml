@@ -2,9 +2,10 @@ version: 2.1
 orbs:
   # Your orb will be automatically injected here during the pipeline.
   # Reference your orb's jobs and commands below as they will exist when built.
+  multiplication_circleci: democircleci/multiplication_circleci@dev:0e8bbc046c9db970af1f9bc5e7a7f59ae45b34d8
   orb-tools: circleci/orb-tools@12.0
   # The orb definition is intentionally not included here. It will be injected into the pipeline.
-  multiplication_circleci: {}
+  # multiplication_circleci: {}
 
 # Use this tag to ensure test jobs always run,
 # even though the downstream publish job will only run on release tags.
@@ -13,11 +14,11 @@ filters: &filters
     only: /.*/
 
 # Filter for release tags.
-release-filters: &release-filters
-  branches:
-    ignore: /.*/
-  tags:
-    only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+# release-filters: &release-filters
+#   branches:
+#     ignore: /.*/
+#   tags:
+#     only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
 
 jobs:
   # Create jobs to test the commands of your orbs.
@@ -28,7 +29,9 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - multiplication_circleci/greet
+      - multiplication_circleci/multiply:
+          numA: 2
+          numb: 5
 workflows:
   test-deploy:
     jobs:
