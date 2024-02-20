@@ -40,15 +40,15 @@ workflows:
       - multiplication:
           #filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
-      # - orb-tools/pack:
-      #     filters: *filters
-      # - orb-tools/publish:
-      #     orb_name: democircleci/multiplication_circleci
-      #     vcs_type: << pipeline.project.type >>
-      #     # pub_type: production
-      #     # Ensure this job requires all test jobs and the pack job.
-      #     requires:
-      #       - orb-tools/pack
-      #       - command-test
-      #     context: orb-publishing
-      #     filters: *filters
+      - orb-tools/pack:
+          filters: *filters
+      - orb-tools/publish:
+          orb_name: democircleci/multiplication_circleci
+          vcs_type: << pipeline.project.type >>
+          # pub_type: production
+          # Ensure this job requires all test jobs and the pack job.
+          requires:
+            - orb-tools/pack
+            - command-test
+          context: orb-publishing
+          filters: *filters
