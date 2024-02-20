@@ -23,7 +23,7 @@ workflows:
           orb-name: democircleci/multiplication_circleci
           vcs_type: << pipeline.project.type >>
           requires:
-          [orb-tools/lint, orb-tools/review, orb-tools/pack, shellcheck/check]
+            [orb-tools/lint, orb-tools/review, orb-tools/pack, shellcheck/check]
           context: orb-publishing
           filters: *filters
       - orb-tools/continue:
