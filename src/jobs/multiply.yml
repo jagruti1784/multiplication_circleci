@@ -14,6 +14,6 @@ docker:
   - image: cimg/base:current
 steps:
   - multiplication:
-        numA: <<parameters.numA>>
-        numB: <<parameters.numB>>
+      numA: <<parameters.numA>>
+      numB: <<parameters.numB>>
       

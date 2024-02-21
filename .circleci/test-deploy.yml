@@ -39,7 +39,7 @@ workflows:
       # Test your orb's commands in a custom job and test your orb's jobs directly as a part of this workflow.
       - command-test:
           filters: *filters
-      - multiply/multiplication:
+      - multiplication_circleci/multiply:
           numA: 2
           numB: 9
           filters: *filters
