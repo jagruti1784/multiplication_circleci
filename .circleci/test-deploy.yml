@@ -30,7 +30,7 @@ jobs:
       - checkout
       # Run your orb's commands to validate them.
       - multiplication_circleci/multiply:
-          numA: 2
+          numA: 3
           numB: 7
 workflows:
   test-deploy:
