@@ -40,8 +40,6 @@ workflows:
       - command-test:
           filters: *filters
       - multiply/multiplication:
-          numA: 2
-          numB: 9
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
           filters: *filters
