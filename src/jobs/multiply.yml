@@ -2,8 +2,6 @@ description: >
   This job will multiply 2 numbers
 # What will this job do?
 
-executor: default
-
 parameters:
   numA:
     type: integer
@@ -11,10 +9,11 @@ parameters:
   numB:
     type: integer
     description: Second number
+
+docker:
+  - image: cimg/base:current
 steps:
-  - run:
-      environment:
-        PARAM_NUMA: <<parameters.numA>>
-        PARAM_NUMB: <<parameters.numB>>
-      name: Multiplying <<parameters.numA>> * <<parameters.numB>>
-      command: <<include(scripts/multiply.sh)>>
+  - multiplication:
+        numA: <<parameters.numA>>
+        numB: <<parameters.numB>>
+      
