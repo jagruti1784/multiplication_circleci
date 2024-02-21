@@ -40,9 +40,10 @@ workflows:
       - command-test:
           filters: *filters
       - multiplication_circleci/multiply:
+          func: "MUL"
           numA: 8
           numB: 7
-      #     filters: *filters
+          filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
           filters: *filters
