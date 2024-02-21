@@ -22,9 +22,8 @@ steps:
   - checkout
   - when:
       condition:
-        equals: [ "MUL", <<parameters.func>>]
+        equals: ["MUL", "<<parameters.func>>"]
       steps:
         - multiply:
             numA: <<parameters.numA>>
             numB: <<parameters.numB>>
-            
