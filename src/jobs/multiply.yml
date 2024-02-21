@@ -8,20 +8,20 @@ jobs:
     docker:
       - image: cimg/base:2021.04 
 
-parameters:
-  numA:
-    type: integer
-    description: First number
-  numB:
-    type: integer
-    description: Second number
-steps:
-  - run:
-      environment:
-        PARAM_NUMA: <<parameters.numA>>
-        PARAM_NUMB: <<parameters.numB>>
-      name: Multiplying <<parameters.numA>> * <<parameters.numB>>
-      command: <<include(scripts/multiply.sh)>>
+  parameters:
+    numA:
+      type: integer
+      description: First number
+    numB:
+      type: integer
+      description: Second number
+  steps:
+    - run:
+        environment:
+          PARAM_NUMA: <<parameters.numA>>
+          PARAM_NUMB: <<parameters.numB>>
+        name: Multiplying <<parameters.numA>> * <<parameters.numB>>
+        command: <<include(scripts/multiply.sh)>>
 
 # description: >
 #   Multiplication of two numbers
