@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  aws-eks: circleci/aws-eks@1.0.3
+
+jobs:
+  multiplication:
+    docker:
+      - image: cimg/base:2021.04 
+
+parameters:
+  numA:
+    type: integer
+    description: First number
+  numB:
+    type: integer
+    description: Second number
+steps:
+  - run:
+      environment:
+        PARAM_NUMA: <<parameters.numA>>
+        PARAM_NUMB: <<parameters.numB>>
+      name: Multiplying <<parameters.numA>> * <<parameters.numB>>
+      command: <<include(scripts/multiply.sh)>>
+
+# description: >
+#   Multiplication of two numbers
+# parameters:
+#   numA:
+#     type: integer
+#     description: First number
+#   numB:
+#     type: integer
+#     description: Second number
+# steps:
+#   - run:
+#       environment:
+#         PARAM_NUMA: <<parameters.numA>>
+#         PARAM_NUMB: <<parameters.numB>>
+#       name: Multiplying <<parameters.numA>> * <<parameters.numB>>
+#       command: <<include(scripts/multiply.sh)>>
