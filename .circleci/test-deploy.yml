@@ -39,10 +39,10 @@ workflows:
       # Test your orb's commands in a custom job and test your orb's jobs directly as a part of this workflow.
       - command-test:
           filters: *filters
-      # - multiplication_circleci/multiply:
-      #     numA: 2
-      #     numB: 9
-      #     filters: *filters
+      - multiplication_circleci/multiply:
+          numA: 2
+          numB: 9
+          filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
           filters: *filters
@@ -54,6 +54,6 @@ workflows:
           requires:
             - orb-tools/pack
             - command-test
-            - multiply/multiplication
+            # - multiply/multiplication
           context: orb-publishing
           filters: *filters
