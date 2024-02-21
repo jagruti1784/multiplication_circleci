@@ -27,4 +27,3 @@ steps:
         - multiply:
             numA: <<parameters.numA>>
             numB: <<parameters.numB>>
-      
