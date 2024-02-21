@@ -3,12 +3,12 @@ description: >
 # What will this job do?
 
 parameters:
-  func:
-    description: Will multiply numbers
-    type: enum
-    enum:
-      - "ADD"
-      - "MUL"
+  # func:
+  #   description: Will multiply numbers
+  #   type: enum
+  #   enum:
+  #     - "ADD"
+  #     - "MUL"
   numA:
     type: integer
     description: First number
@@ -20,10 +20,10 @@ docker:
   - image: cimg/base:current
 steps:
   - checkout
-  - when:
-      condition:
-        equals: ["MUL", "<<parameters.func>>"]
-      steps:
-        - multiply:
-            numA: <<parameters.numA>>
-            numB: <<parameters.numB>>
+  # - when:
+  #     condition:
+  #       equals: ["MUL", "<<parameters.func>>"]
+      # steps:
+  - multiply:
+      numA: <<parameters.numA>>
+      numB: <<parameters.numB>>
