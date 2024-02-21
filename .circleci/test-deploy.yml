@@ -40,7 +40,6 @@ workflows:
       - command-test:
           filters: *filters
       - multiplication_circleci/multiply:
-          func: "MUL"
           numA: 8
           numB: 7
           filters: *filters
@@ -55,6 +54,6 @@ workflows:
           requires:
             - orb-tools/pack
             - command-test
-            # - multiply/multiplication
+            - multiplication_circleci/multiply
           context: orb-publishing
           filters: *filters
