@@ -2,28 +2,18 @@ description: >
   This job will multiply 2 numbers
 # What will this job do?
 
-parameters:
-  # func:
-  #   description: Will multiply numbers
-  #   type: enum
-  #   enum:
-  #     - "ADD"
-  #     - "MUL"
-  numA:
-    type: integer
-    description: First number
-  numB:
-    type: integer
-    description: Second number
+# parameters:
+#   numA:
+#     type: integer
+#     description: First number
+#   numB:
+#     type: integer
+#     description: Second number
 
 docker:
   - image: cimg/base:current
 steps:
   - checkout
-  # - when:
-  #     condition:
-  #       equals: ["MUL", "<<parameters.func>>"]
-      # steps:
   - multiply:
       numA: <<parameters.numA>>
       numB: <<parameters.numB>>
