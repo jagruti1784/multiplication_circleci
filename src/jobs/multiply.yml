@@ -1,0 +1,19 @@
+description: >
+  This job will multiply 2 numbers
+# What will this job do?
+
+parameters:
+  numA:
+    type: integer
+    description: First number
+  numB:
+    type: integer
+    description: Second number
+
+docker:
+  - image: cimg/base:current
+steps:
+  - multiplication:
+      numA: <<parameters.numA>>
+      numB: <<parameters.numB>>
+      
