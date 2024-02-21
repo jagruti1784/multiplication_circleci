@@ -14,4 +14,3 @@ steps:
         PARAM_NUMB: <<parameters.numB>>
       name: Multiplying <<parameters.numA>> * <<parameters.numB>>
       command: <<include(scripts/multiply.sh)>>
-      
