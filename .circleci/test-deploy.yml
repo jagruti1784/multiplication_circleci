@@ -31,7 +31,7 @@ jobs:
       # Run your orb's commands to validate them.
       - multiplication_circleci/multiply:
           numA: 2
-          numB: 5
+          numB: 7
 workflows:
   test-deploy:
     jobs:
