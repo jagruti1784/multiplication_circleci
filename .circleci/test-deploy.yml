@@ -30,21 +30,21 @@ jobs:
       - checkout
       # Run your orb's commands to validate them.
       - multiplication_circleci/add:
-          numA: 3
-          numB: 7
-          numC: 7
+          numA: 1
+          numB: 2
+          numC: 3
       - multiplication_circleci/sub:
-          numA: 3
-          numB: 7
-          numC: 7
+          numA: 4
+          numB: 5
+          numC: 6
       - multiplication_circleci/multiply:
-          numA: 3
-          numB: 7
-          numC: 7
+          numA: 7
+          numB: 8
+          numC: 9
       - multiplication_circleci/divide:
-          numA: 3
-          numB: 7
-          numC: 7
+          numA: 10
+          numB: 11
+          numC: 12
 workflows:
   test-deploy:
     jobs:
@@ -53,24 +53,24 @@ workflows:
       - command-test:
           filters: *filters
       - multiplication_circleci/add:
-          numA: 8
-          numB: 7
-          numC: 10
+          numA: 13
+          numB: 14
+          numC: 15
           filters: *filters
       - multiplication_circleci/sub:
-          numA: 8
-          numB: 7
-          numC: 10
+          numA: 16
+          numB: 17
+          numC: 18
           filters: *filters
       - multiplication_circleci/multiply:
-          numA: 8
-          numB: 7
-          numC: 10
+          numA: 19
+          numB: 20
+          numC: 21
           filters: *filters
       - multiplication_circleci/divide:
-          numA: 8
-          numB: 7
-          numC: 10
+          numA: 22
+          numB: 23
+          numC: 24
           filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:
