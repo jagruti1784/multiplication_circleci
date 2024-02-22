@@ -12,6 +12,9 @@ parameters:
 
 # docker:
 #   - image: cimg/base:current
+
+executor: default
+
 steps:
   - checkout
   - multiply:
