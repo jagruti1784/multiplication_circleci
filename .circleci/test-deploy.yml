@@ -32,7 +32,7 @@ jobs:
       - multiplication_circleci/multiply:
           numA: 3
           numB: 7
-          numC: 10
+          numC: 7
 workflows:
   test-deploy:
     jobs:
