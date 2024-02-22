@@ -29,7 +29,19 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
+      - multiplication_circleci/add:
+          numA: 3
+          numB: 7
+          numC: 7
+      - multiplication_circleci/sub:
+          numA: 3
+          numB: 7
+          numC: 7
       - multiplication_circleci/multiply:
+          numA: 3
+          numB: 7
+          numC: 7
+      - multiplication_circleci/divide:
           numA: 3
           numB: 7
           numC: 7
@@ -40,7 +52,22 @@ workflows:
       # Test your orb's commands in a custom job and test your orb's jobs directly as a part of this workflow.
       - command-test:
           filters: *filters
+      - multiplication_circleci/add:
+          numA: 8
+          numB: 7
+          numC: 10
+          filters: *filters
+      - multiplication_circleci/sub:
+          numA: 8
+          numB: 7
+          numC: 10
+          filters: *filters
       - multiplication_circleci/multiply:
+          numA: 8
+          numB: 7
+          numC: 10
+          filters: *filters
+      - multiplication_circleci/divide:
           numA: 8
           numB: 7
           numC: 10

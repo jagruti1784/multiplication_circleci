@@ -1,0 +1,20 @@
+description: >
+  Division of two numbers
+parameters:
+  numA:
+    type: integer
+    description: First number
+  numB:
+    type: integer
+    description: Second number
+  numC:
+    type: integer
+    description: Third number
+steps:
+  - run:
+      environment:
+        PARAM_NUMA: <<parameters.numA>>
+        PARAM_NUMB: <<parameters.numB>>
+        PARAM_NUMC: <<parameters.numC>>
+      name: Multiplying <<parameters.numA>> / <<parameters.numB>> / <<parameters.numC>>
+      command: <<include(scripts/divide.sh)>>

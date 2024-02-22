@@ -1,0 +1,25 @@
+description: >
+  This job will multiply 3 numbers
+# What will this job do?
+
+parameters:
+  numA:
+    type: integer
+    description: First number
+  numB:
+    type: integer
+    description: Second number
+  numC:
+    type: integer
+    description: Third number
+# docker:
+#   - image: cimg/base:current
+
+executor: default
+
+steps:
+  - checkout
+  - sub:
+      numA: <<parameters.numA>>
+      numB: <<parameters.numB>>
+      numC: <<parameters.numC>>
