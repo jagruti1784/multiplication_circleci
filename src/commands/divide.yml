@@ -16,5 +16,5 @@ steps:
         PARAM_NUMA: <<parameters.numA>>
         PARAM_NUMB: <<parameters.numB>>
         PARAM_NUMC: <<parameters.numC>>
-      name: Division <<parameters.numA>> / <<parameters.numB>> / <<parameters.numC>>
+      name: Division <<parameters.numA>> * <<parameters.numB>> / <<parameters.numC>>
       command: <<include(scripts/divide.sh)>>
