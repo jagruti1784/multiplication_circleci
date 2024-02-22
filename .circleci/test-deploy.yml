@@ -42,9 +42,9 @@ jobs:
           numB: 8
           numC: 9
       - multiplication_circleci/divide:
-          numA: 10
+          numA: 11
           numB: 11
-          numC: 12
+          numC: 11
 workflows:
   test-deploy:
     jobs:
