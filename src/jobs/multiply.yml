@@ -10,8 +10,8 @@ parameters:
     type: integer
     description: Second number
 
-docker:
-  - image: cimg/base:current
+# docker:
+#   - image: cimg/base:current
 steps:
   - checkout
   - multiply:
