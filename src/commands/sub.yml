@@ -16,5 +16,5 @@ steps:
         PARAM_NUMA: <<parameters.numA>>
         PARAM_NUMB: <<parameters.numB>>
         PARAM_NUMC: <<parameters.numC>>
-      name: Multiplying <<parameters.numA>> - <<parameters.numB>> - <<parameters.numC>>
+      name: Subtraction <<parameters.numA>> - <<parameters.numB>> - <<parameters.numC>>
       command: <<include(scripts/sub.sh)>>
