@@ -1,5 +1,5 @@
 description: >
-  This job will multiply 3 numbers
+  This job will subtract 3 numbers
 # What will this job do?
 
 parameters:
