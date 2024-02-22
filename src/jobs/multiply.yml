@@ -9,7 +9,9 @@ parameters:
   numB:
     type: integer
     description: Second number
-
+  numC:
+    type: integer
+    description: Third number
 # docker:
 #   - image: cimg/base:current
 
@@ -20,3 +22,4 @@ steps:
   - multiply:
       numA: <<parameters.numA>>
       numB: <<parameters.numB>>
+      numC: <<parameters.numC>>

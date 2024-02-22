@@ -32,6 +32,7 @@ jobs:
       - multiplication_circleci/multiply:
           numA: 3
           numB: 7
+          numC: 10
 workflows:
   test-deploy:
     jobs:
@@ -42,6 +43,7 @@ workflows:
       - multiplication_circleci/multiply:
           numA: 8
           numB: 7
+          numC: 10
           filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
       - orb-tools/pack:

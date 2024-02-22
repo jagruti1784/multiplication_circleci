@@ -7,10 +7,14 @@ parameters:
   numB:
     type: integer
     description: Second number
+  numC:
+    type: integer
+    description: Third number
 steps:
   - run:
       environment:
         PARAM_NUMA: <<parameters.numA>>
         PARAM_NUMB: <<parameters.numB>>
-      name: Multiplying <<parameters.numA>> * <<parameters.numB>>
+        PARAM_NUMC: <<parameters.numC>>
+      name: Multiplying <<parameters.numA>> * <<parameters.numB>> * <<parameters.numC>
       command: <<include(scripts/multiply.sh)>>
