@@ -12,8 +12,8 @@ parameters:
   numC:
     type: integer
     description: Third number
-  machine:
-      image: ubuntu-2004:202010-01 # recommended linux image
+machine:
+  image: ubuntu-2004:202010-01 # recommended linux image
 
 executor: default
 
