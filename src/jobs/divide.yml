@@ -16,9 +16,9 @@ parameters:
 #   - image: cimg/base:current
 # macos:
 #   xcode: "14.2.0"
-# executor: default
+executor: default
 
-executor: machine
+# executor: machine
 
 steps:
   - checkout
