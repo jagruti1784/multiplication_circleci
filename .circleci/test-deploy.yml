@@ -24,8 +24,9 @@ jobs:
   # Create jobs to test the commands of your orbs.
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
-    docker:
-      - image: cimg/base:current
+  build:
+    machine:
+      image: windows-server-2019-cuda:current
     steps:
       - checkout
       # Run your orb's commands to validate them.
