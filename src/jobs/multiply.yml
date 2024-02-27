@@ -16,7 +16,7 @@ parameters:
 #   - image: cimg/base:current
 docker:
   - image: cimg/base:2022.09
-executor: default
+# executor: default
 
 steps:
   - checkout
