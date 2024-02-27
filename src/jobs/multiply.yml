@@ -14,9 +14,9 @@ parameters:
     description: Third number
 # docker:
 #   - image: cimg/base:current
-docker:
-  - image: cimg/base:2022.09
-# executor: default
+# docker:
+#   - image: cimg/base:2022.09
+executor: default
 
 steps:
   - checkout
