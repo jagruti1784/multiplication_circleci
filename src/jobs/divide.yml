@@ -14,7 +14,8 @@ parameters:
     description: Third number
 # docker:
 #   - image: cimg/base:current
-
+    macos:
+      xcode: "14.2.0"
 executor: default
 
 steps:
