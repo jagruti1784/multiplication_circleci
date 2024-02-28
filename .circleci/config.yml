@@ -3,7 +3,7 @@ setup: true
 orbs:
   orb-tools: circleci/orb-tools@12.0
   shellcheck: circleci/shellcheck@3.1
-  hari: hari-circle-ns/hariorb@dev:alpha
+  # hariorb: hari-circle-ns/hariorb@dev:alpha
 
 filters: &filters
   tags:
@@ -12,7 +12,7 @@ filters: &filters
 workflows:
   lint-pack:
     jobs:
-      - hariorb/greet
+      # - hariorb/greet
       - orb-tools/lint:
           filters: *filters
       - orb-tools/pack:
